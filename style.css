@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+* {
+    /* Tirando tds os espaçamento, linhas, traços  e bordas */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    border: none;
+    text-decoration: none;
+    font-family: 'Righteous','cursive';
+
+}
+
+html {
+    height: 100vh;
+    font-size: 62.5%;
+}
+
+/* Estilizando o Menu */
+
+.conteudo {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    position: fixed;
+    padding-left: 20rem;
+
+}
+
+.logo{
+    width: 70px;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 {
+    color: white;
+    font-size: 1.6rem;
+    
+
+
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.conteudo .list-menu {
+    width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.conteudo .list-menu li a {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    color: white;
+    font-size: 1.8rem;
+    text-transform: uppercase; /*converte todas as primeiras letras em todas as palavras para maiúsculas*/
+    font-weight: 500; /* grossura da fonte */ 
+    transition: all 200ms ease-in;
+
+}
+
+.conteudo .list-menu li a:hover{
+    background-color: #333;
+    border-bottom: 4px solid red;
+    color: red;
+}
+
+
+
+/*Primeira Seção */
+
+.primeira-secao {   /* altura total, largal total , centralizar o texto no meio e deixando um sobre o outro */
+    height: 100vh;
+    background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)),url(./img/fundo.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row; /* torna um elemento em forma de coluna um em cima do outro*/
+    justify-content: center;  /* aliando  na vertical */ 
+    align-items: center;
+}
+
+
+.primeira-secao .conteudo-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.primeira-secao h1{
+    color: red;
+    font-size: 6rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.primeira-secao h2{
+    color: rgba(177,177,177,177);
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    
+}
+
+.btn button {
+    width: 240px;
+    height: 70px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: red;
+    border-radius: 10px;
+    color: black;
+    font-weight: 650;
+    margin-top: 6rem;
+    transition: all 500ms;
+
+}
+
+.btn button:hover{
+    border: 1px solid red;
+    background-color: transparent;
+    color: aliceblue;
+}
+
+.btn {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+
+/* SOBRE */ 
+
+
+
+.sobre-nós{
+    height: 100vh;
+    background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)),url(./img/imagem3.jpeg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 50px;
+    width: 100vw;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;  
+    align-items: center;
+    
+}
+    
+
+.sobre-nós h3{
+    text-align: center;
+    color:red;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+   
+    
+}
+.sobre-nós p{
+    padding: 0px 50 px ;
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+}
+
+
+
+/* CARDAPIO*/ 
+
+.section-cardapio{
+    min-height: auto;
+    height: 100%;
+    background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)),url(./imgcard/fundo\ cardapio.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: repeat-y;
+
+}
+.container {
+    Max-width: 100%;
+    Width: 100rem;
+    Margin: 0 auto;
+    Padding: 3rem 0;
+}
+
+.container h1 {
+    text-align: center;
+    color:red;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase; 
+    padding: 10rem 0; 
+}
+
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 5rem;
+}
+
+.cardapio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  
+img{
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 50px;
+}
+
+
+  
+.cardapio span{
+    padding-top: 1rem;
+    color:red;
+    font-size: 2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* CONTATOS */ 
+
+.section-contatos{
+    height: 100vh;
+    background-image: linear-gradient(rgba(29,29,29,0.8),rgba(29,29,29,0.8)),url(./imgcard/fundo\ cardapio.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+} 
+.section-contatos h3{
+    text-align: center;
+    color:red;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+
+.btn-car button {
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: red;
+    border-radius: 10px;
+    color: rgb(250, 248, 248);
+    font-weight: 200;
+    margin-top: 6rem;
+    transition: all 500ms;
+
+}
+
+.btn-car button:hover{
+    border: 1px solid red;
+    background-color: transparent;
+    color: aliceblue;
+}
+
+.cart-table {
+    width: 100%;
+    font-size: 25px;
+    color:  aliceblue;
+}
+
+thead {
+    background-color: red;
+    
+}
+
