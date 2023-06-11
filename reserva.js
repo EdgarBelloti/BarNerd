@@ -1,18 +1,37 @@
 document.getElementById("reservationForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Evita que o formulário seja enviado automaticamente
+  event.preventDefault(); // Evita que o formulário seja enviado automaticamente
 
-    // Obter os valores dos campos de entrada
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var date = document.getElementById("date").value;
-    var time = document.getElementById("time").value;
-    var guests = document.getElementById("guests").value;
+  // Pegamos os valores de entrada 
+  var nome = document.getElementById("nome").value;
+  var email = document.getElementById("email").value;
+  var data = document.getElementById("data").value;
+  var horario = document.getElementById("horario").value;
+  var convidados = document.getElementById("convidados").value;
 
-    // Aqui você pode adicionar a lógica para enviar os dados da reserva para o servidor
-    // Por exemplo, você pode fazer uma solicitação AJAX para um endpoint no seu servidor
+  // Criamos um objeto FormData para enviar os dados via ajax
+  var formData = new FormData();
+  formData.append("nome", nome);
+  formData.append("email", email);
+  formData.append("data", data);
+  formData.append("horario", horario);
+  formData.append("convidados", convidados);
 
-    // Exemplo de exibição da confirmação de reserva
-    var reservationStatus = document.getElementById("reservationStatus");
-    reservationStatus.innerHTML = "Reserva confirmada para " + name + " no dia " + date + " às " + time + " para " + guests + " convidado(s).";
-    reservationStatus.style.display = "block";
+  // Criamos uma nova solicitação ajax 
+  var xhr = new XMLHttpRequest();
+  xhr.open("POST", "reservamesas.RPC.php", true); //Fazemos o post dos dados via xhr 
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === XMLHttpRequest.DONE) {
+      if (xhr.status === 200) {
+        // Terminamos a solicitacao recebendo Status 200, o que significa que deu certo kkk
+        var resposta = xhr.responseText;
+        var statusReserva = document.getElementById("reservationStatus");
+        statusReserva.innerHTML = resposta; // Exibe a resposta do que servidor 
+        statusReserva.style.display = "block";
+      } else {
+        // Se cair aqui aconteceu algum erro durante o processamento da requisicao ajax. 
+        console.error("Erro na solicitação AJAX: " + xhr.status);
+      }
+    }
+  };
+  xhr.send(formData); //Envia a requisicao 
 });
