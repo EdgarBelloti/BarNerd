@@ -25,7 +25,7 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
         // Terminamos a solicitacao recebendo Status 200, o que significa que deu certo kkk
         var resposta = xhr.responseText;
         var statusReserva = document.getElementById("reservationStatus");
-        statusReserva.innerHTML = resposta; // Exibe a resposta do que servidor 
+        statusReserva.innerHTML = resposta; // Exibe a resposta do que servidor retorna  
         statusReserva.style.display = "block";
       } else {
         // Se cair aqui aconteceu algum erro durante o processamento da requisicao ajax. 
